@@ -38,9 +38,14 @@ def print_dominant_frequencies(file_path):
     plt.plot(bins, frequencies)
     plt.show()
 
+
+def recognized(true_slope, calc_slope, tau):
+    return 1 - (min(true_slope, calc_slope) / max(true_slope, calc_slope)) < tau
+
 if __name__ == '__main__':
-    file_path = 'recording_3_clean.wav'
+    file_path = 'recording_4.wav'
     print(get_slope(file_path, 0.2))
     print_spectrogram(file_path)
     print_dominant_frequencies(file_path)
+
 
